@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const con = mysql.createConnection({
-	host: 'http://185.27.134.10',
+	host: 'https://185.27.134.10/db_structure.php?db=epiz_32360754_hims_db',
 	user: 'epiz_32360754',
 	password: 'SZJwGz7lXufmq',
-	database: 'hims_db'
+	database: 'epiz_32360754_hims_db'
 });	
 con.connect(function(err){
 	if(err) throw err;
