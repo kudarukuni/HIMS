@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const con = mysql.createConnection({
-	host: 'http://185.27.134.10/db_structure.php?db=epiz_32360754_hims_db',
+	host: 'http://185.27.134.10:3306',
 	user: 'epiz_32360754',
 	password: 'SZJwGz7lXufmq',
 	database: 'epiz_32360754_hims_db'
