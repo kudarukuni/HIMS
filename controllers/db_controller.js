@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const con = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'database'
+	host: 'https://sql305.infinityfree.com',
+	user: 'epiz_32360754',
+	password: 'SZJwGz7lXufmq',
+	database: 'hims_db'
 });	
 con.connect(function(err){
 	if(err) throw err;
