@@ -4,6 +4,7 @@
   "description": "Hospital Information Management System",
   "main": "main.js",
   "scripts": {
+    "build": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
