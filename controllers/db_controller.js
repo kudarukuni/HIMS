@@ -1,14 +1,36 @@
 const mysql = require('mysql');
 const bcrypt = require('bcrypt');
-const con = mysql.createConnection({
-	host: '213.171.200.21',
-	user: 'epiz_32360754',
-	password: 'SZJwGz7lXufmq',
-	database: 'epiz_32360754_hims_db'
-});	
-con.connect(function(err){
-	if(err) throw err;
-});
+var db_config = {
+  host: '213.171.200.21',
+    user: 'kudarukuni',
+    password: 'Harare1*',
+    database: 'laravel'
+};
+
+var con;
+
+function handleDisconnect() {
+  con = mysql.createConnection(db_config); // Recreate the connection, since
+                                                  // the old one cannot be reused.
+
+  con.connect(function(err) {              // The server is either down
+    if(err) {                                     // or restarting (takes a while sometimes).
+      console.log('error when connecting to db:', err);
+      setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+    }                                     // to avoid a hot loop, and to allow our node script to
+  });                                     // process asynchronous requests in the meantime.
+                                          // If you're also serving http, display a 503 error.
+  con.on('error', function(err) {
+    console.log('db error', err);
+    if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+      handleDisconnect();                         // lost due to either server restart, or a
+    } else {                                      // connnection idle timeout (the wait_timeout
+      throw err;                                  // server variable configures this)
+    }
+  });
+}
+
+handleDisconnect();
 const emailServerDetails = {
 	emailId: 'himsdata123@gmail.com',
 	pass: 'himsdata$$321',
