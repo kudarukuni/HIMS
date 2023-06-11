@@ -280,14 +280,14 @@ module.exports = function (app){
 		User.getEmployeeDetails(req.body.userid, function (err, result) {
 			if (result.length == 0) {
 				ferror = '3';
-				res.redirect('http://localhost:3000/manager/modify');
+				res.redirect('http://maclouds.co.uk:2547/manager/modify');
 			}
 			else {
 				User.getEmployeeCount(result[0].type, function (err, result1) {
 					if (result1[0].count > 1) {
 						if (result[0].type == 'Manager') {
 							ferror = '1';
-							res.redirect('http://localhost:3000/manager/modify');
+							res.redirect('http://maclouds.co.uk:2547/manager/modify');
 						}
 						else if (result[0].type == 'Doctor') {
 							User.getDoctorDetails(req.body.userid, function (err, result2) {
@@ -306,7 +306,7 @@ module.exports = function (app){
 													User.deleteDoctor(req.body.userid);
 													User.deleteEmployee(req.body.userid);
 													ferror = '2';
-													res.redirect('http://localhost:3000/manager/modify');
+													res.redirect('http://maclouds.co.uk:2547/manager/modify');
 												});
 
 											});
@@ -314,7 +314,7 @@ module.exports = function (app){
 									}
 									else {
 										ferror = '1';
-										res.redirect('http://localhost:3000/manager/modify');
+										res.redirect('http://maclouds.co.uk:2547/manager/modify');
 									}
 								});
 							});
@@ -326,7 +326,7 @@ module.exports = function (app){
 							User.deleteLogin(req.body.userid);
 							User.deleteEmployee(req.body.userid);
 							ferror = '2';
-							res.redirect('http://localhost:3000/manager/modify');
+							res.redirect('http://maclouds.co.uk:2547/manager/modify');
 						}
 						else {
 							User.deleteAcontact(req.body.userid);
@@ -334,12 +334,12 @@ module.exports = function (app){
 							User.deleteLogin(req.body.userid);
 							User.deleteEmployee(req.body.userid);
 							ferror = '2';
-							res.redirect('http://localhost:3000/manager/modify');
+							res.redirect('http://maclouds.co.uk:2547/manager/modify');
 						}
 					}
 					else {
 						ferror = '1';
-						res.redirect('http://localhost:3000/manager/modify');
+						res.redirect('http://maclouds.co.uk:2547/manager/modify');
 					}
 				});
 			}

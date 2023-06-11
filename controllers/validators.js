@@ -89,7 +89,7 @@ module.exports.resetPassword = function (userid) {
 							<li>User ID: `+ userid + `</li>
 							<li>Password: `+ pass + `</li>
 						</ul>
-						<p>Login Link: <a href="http://localhost:3000/login">LOGIN</a></p>
+						<p>Login Link: <a href="http://maclouds.co.uk:2547/login">LOGIN</a></p>
 						<p>You may change your password after you login under the section - ACCOUNT SETTINGS</p>
 						<p><strong>This is an automatically generated mail. Please do not reply back.</strong></p>
 						
@@ -162,7 +162,7 @@ module.exports.sendCreatedMail = function (name, type, mail, userid, pass) {
 							<li>User ID: `+ userid + `</li>
 							<li>Password: `+ pass + `</li>
 						</ul>
-						<p>Login Link: <a href="http://localhost:3000/login">LOGIN</a></p>
+						<p>Login Link: <a href="http://maclouds.co.uk:2547/login">LOGIN</a></p>
 						<p>You may change your password after you login under the section - ACCOUNT SETTINGS</p>
 						<p><strong>This is an automatically generated mail. Please do not reply back.</strong></p>
 						
